@@ -8,8 +8,6 @@ data_Sarah <- read.csv2("Codeplan_Reliabilität_Sarah_fertig.csv")
 data_Emma <- read.csv2("Codeplan_Reliabilität_Emma_fertig.csv")
 data_Annalena <- read.csv2("Codeplan_Reliabilität_AnnaLena_fertig.csv")
 
-tibble_Simon <- as_tibble(data_Simon)
-
 df_all <- rbind(data_Simon, data_Annalena, data_Sarah, data_Emma)
 
 reliability <- df_all %>% 
