@@ -35,11 +35,12 @@ data_tibble <- as_tibble(data)
 
 #data_tibble %>% tab_frequencies(version)
 
-  
+#read data in another format  
 data_rearranged <- read.csv2("Dataset_rearranged.csv")
 View(data_rearranged)
 data_tibble_re <- as_tibble(data_rearranged)
 
+#descriptives
 data_tibble_re %>% tab_frequencies(version, race1)
 data_tibble_re %>% tab_frequencies(version, large1)
 data_tibble_re %>% tab_frequencies(version, gender1)
@@ -48,6 +49,10 @@ data_tibble_re %>% tab_frequencies(version, machtposition1)
 
 #####what descriptives do we actually need?
 
+
+##########################################
+####Hypotheses for all models combined####
+##########################################
 
 #H1a
 crosstabs_1 <-data_tibble_re %>% crosstab(
@@ -127,16 +132,10 @@ data_tibble_re_fil %>% crosstab(
 
 
 
+###################################
+####crosstabs per model -> v1.5####
+###################################
 
-
-
-
-
-
-#####continue here with crosstabs overall
-
-
-#crosstabs per model -> v1.5
 data_filtered_v1 <- data_tibble %>% 
   filter(version == "1_5")
 
@@ -211,7 +210,10 @@ data_filtered_v1_fil %>% crosstab(
 )
 
 
-#crosstabs per model -> v2.0
+###################################
+####crosstabs per model -> v2.0####
+###################################
+
 data_filtered_v2 <- data_tibble %>% 
   filter(version == "2_0")
 
@@ -287,8 +289,10 @@ data_filtered_v2_fil %>% crosstab(
 )
 
 
+###################################
+####crosstabs per model -> v3.5####
+###################################
 
-#crosstabs per model -> v3.5
 data_filtered_v3 <- data_tibble %>% 
   filter(version == "3_5")
 
