@@ -61,7 +61,10 @@ crosstabs_1 <-data_tibble_re %>% crosstab(
   machtposition1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
+)
+crosstabs_1 <- crosstabs_1 %>% select(
+  c(2, 3, 4)
 )
 chisq.posthoc.test(crosstabs_1, method = "bonferroni")
 
