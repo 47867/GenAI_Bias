@@ -86,9 +86,11 @@ crosstabs_2 <- data_tibble_re_fil %>% crosstab(
   gender1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_2 <- crosstabs_2 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_2, method = "bonferroni", round = 12)
 
 #H2b
@@ -96,9 +98,11 @@ crosstabs_3 <- data_tibble_re_fil %>% crosstab(
   gender1,
   position1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_3 <- crosstabs_3 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_3, method = "bonferroni", round = 12)
 
 #H3a
@@ -122,9 +126,11 @@ crosstabs_4 <- data_tibble_re_fil %>% crosstab(
   machtposition1,
   gender1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_4 <- crosstabs_4 %>% select(
+  c(2, 3, 4)
+)
 chisq.posthoc.test(crosstabs_4, method = "bonferroni", round = 12)
 
 #H4b
@@ -169,9 +175,11 @@ crosstabs_5 <- data_filtered_v1_fil %>% crosstab(
   gender1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_5 <- crosstabs_5 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_5, method = "bonferroni", round = 12)
 
 #h2b (v1.5)
@@ -247,7 +255,10 @@ crosstabs_6 <- data_filtered_v2_fil %>% crosstab(
   gender1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
+)
+crosstabs_6 <- crosstabs_6 %>% select(
+  c(2, 3)
 )
 
 chisq.posthoc.test(crosstabs_6, method = "bonferroni", round = 12)
@@ -309,9 +320,11 @@ crosstabs_7 <- data_filtered_v3 %>% crosstab(
   machtposition1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_7 <- crosstabs_7 %>% select(
+  c(2, 3, 4)
+)
 chisq.posthoc.test(crosstabs_7, method = "bonferroni", round = 12)
 
 #h1b (v3.5)
@@ -328,9 +341,11 @@ crosstabs_8 <- data_filtered_v3_fil %>% crosstab(
   gender1,
   large1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_8 <- crosstabs_8 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_8, method = "bonferroni", round = 12)
 
 #h2b (v3.5)
@@ -338,9 +353,11 @@ crosstabs_9 <- data_filtered_v3_fil %>% crosstab(
   gender1,
   position1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_9 <- crosstabs_9 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_9, method = "bonferroni", round = 12)
 
 #h3a (v3.5)
@@ -364,9 +381,11 @@ crosstabs_10 <- data_filtered_v3_fil %>% crosstab(
   gender1,
   machtposition1,
   chi_square = TRUE,
-  add_total = TRUE
+  #add_total = TRUE
 )
-
+crosstabs_10 <- crosstabs_10 %>% select(
+  c(2, 3)
+)
 chisq.posthoc.test(crosstabs_10, method = "bonferroni", round = 12)
 
 #h4b (v3.5)
