@@ -90,6 +90,14 @@ data_tibble_re_dich %>% tab_frequencies(version, machtposition2)
 
 
 
+
+
+
+
+
+
+
+
 #####################################
 #### Hypothesen für alle Modelle ####
 #####################################
@@ -195,14 +203,6 @@ data_tibble_re_dich_fil %>% crosstab(
 
 
 
-
-
-
-
-
-
-
-
 ##########################################
 #### Alle Modelle - dichotom - rechts ####
 ##########################################
@@ -275,6 +275,13 @@ data_tibble_re_dich_fil_right %>% crosstab(
   chi_square = TRUE,
   add_total = TRUE
 )
+
+
+
+
+
+
+
 
 
 
