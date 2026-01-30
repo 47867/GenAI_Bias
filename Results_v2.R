@@ -22,7 +22,6 @@ options(scipen = 999)
 #We have an variable called "left_right" so we can still identify each entry.
 
 data_rearranged <- read.csv2("Dataset_rearranged.csv")
-View(data_rearranged)
 data_tibble_re <- as_tibble(data_rearranged)
 
 
@@ -64,6 +63,8 @@ data_tibble_re <- data_tibble_re %>%
     gender != 3
   )
 
+#verify data structure
+View(data_tibble_re)
 
 #######################
 #### descriptives #####
@@ -343,4 +344,104 @@ crosstabs_6 <- crosstabs_6 %>%
 head(crosstabs_6)
 
 chisq.posthoc.test(crosstabs_6, method = "bonferroni", round = 12)
+
+#H2b - v3.5 - significant
+crosstabs_7 <- data_tibble_re_v3 %>% crosstab(
+  gender,
+  position_rec,
+  chi_square = TRUE
+)
+
+crosstabs_7 <- crosstabs_7 %>% 
+  select(
+    -1
+  )
+
+head(crosstabs_7)
+
+chisq.posthoc.test(crosstabs_7, method = "bonferroni", round = 12)
+
+
+
+
+###########################################
+#### explorative analysis - model v1.5 ####
+###########################################
+
+data_tibble_re_v1_filtered <- data_tibble_re_v1 %>% 
+  filter(machtposition != 3)
+
+#H1a - v1.5 - non-significant
+data_tibble_re_v1_filtered %>% crosstab(
+  machtposition,
+  large_rec,
+  chi_square = TRUE
+)
+
+#H1b - v1.5 - non-significant
+data_tibble_re_v1_filtered %>% crosstab(
+  machtposition,
+  position_rec,
+  chi_square = TRUE
+)
+
+###########################################
+#### explorative analysis - model v2.0 ####
+###########################################
+
+data_tibble_re_v2_filtered <- data_tibble_re_v2 %>% 
+  filter(machtposition != 3)
+
+#H1a - v2.0 - non-significant
+data_tibble_re_v2_filtered %>% crosstab(
+  machtposition,
+  large_rec,
+  chi_square = TRUE
+)
+
+#H1b - v2.0 - non-significant
+data_tibble_re_v2_filtered %>% crosstab(
+  machtposition,
+  position_rec,
+  chi_square = TRUE
+)
+
+#H4a - v2.0 - non-significant
+data_tibble_re_v2_filtered %>% crosstab(
+  machtposition,
+  gender,
+  chi_square = TRUE
+)
+
+#H4b - v2.0 - non-significant
+data_tibble_re_v2_filtered %>% crosstab(
+  machtposition,
+  race,
+  chi_square = TRUE
+)
+
+
+###########################################
+#### explorative analysis - model v3.5 ####
+###########################################
+
+data_tibble_re_v3_filtered <- data_tibble_re_v3 %>% 
+  filter(machtposition != 3)
+
+#H1a -v3.5 -> was already significant in main analysis, no further testing necessary
+
+#H1b -v3.5 - non-significant
+data_tibble_re_v3_filtered %>% crosstab(
+  machtposition,
+  position_rec,
+  chi_square = TRUE
+)
+
+#H4b -v3.5 - non-significant
+data_tibble_re_v3_filtered %>% crosstab(
+  machtposition,
+  race,
+  chi_square = TRUE
+)
+
 
