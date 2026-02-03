@@ -77,7 +77,7 @@ data_tibble_re %>% tab_frequencies(version, gender)
 data_tibble_re %>% tab_frequencies(version, position_rec)
 data_tibble_re %>% tab_frequencies(version, machtposition)
 
-#group bvy version and left/right
+#group by version and left/right
 data_tibble_re %>% tab_frequencies(version, left_right, race)
 data_tibble_re %>% tab_frequencies(version, left_right, large_rec)
 data_tibble_re %>% tab_frequencies(version, left_right, gender)
